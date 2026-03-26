@@ -4,32 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasaranga Weerasinghe | Portfolio</title>
-
-    <!-- Favicon - Using Your Logo (FIXED PATHS) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/site.webmanifest">
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-    <meta name="msapplication-TileColor" content="#00bfa6">
+    <link rel="icon" type="image/png" sizes="any" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
     <meta name="theme-color" content="#00bfa6">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- EmailJS for Advanced Contact Form -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
     <style>
-        /* ===== BASIC RESET ===== */
         * {margin:0; padding:0; box-sizing:border-box;}
         body {font-family: 'Roboto', sans-serif; scroll-behavior: smooth; line-height:1.6; background:#020617;}
         a {text-decoration:none; color:inherit;}
 
-        /* ===== NAVBAR ===== */
         #navbar {
             position: fixed;
             top: 0;
@@ -64,7 +50,6 @@
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
         .hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
 
-        /* ===== HERO SECTION ===== */
         #hero {
             position: relative;
             height: 100vh;
@@ -103,7 +88,6 @@
         .btn.disabled:hover { transform: none; box-shadow: none; background: #555; }
         .btn.small { padding: 5px 12px; font-size: 0.75rem; }
 
-        /* FEATURED BADGE */
         .featured-badge {
             position: absolute;
             top: 15px;
@@ -121,7 +105,6 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        /* STATS BADGE */
         .stats-badge {
             position: absolute;
             top: 15px;
@@ -140,7 +123,6 @@
             border: 1px solid rgba(0,191,166,0.3);
         }
 
-        /* VERSION BADGE */
         .version-badge {
             background: rgba(0,191,166,0.2);
             color: #00bfa6;
@@ -151,7 +133,6 @@
             font-weight: normal;
         }
 
-        /* FEATURE LIST */
         .feature-list {
             display: flex;
             flex-wrap: wrap;
@@ -170,7 +151,6 @@
         }
         .feature-list span i { font-size: 0.65rem; }
 
-        /* META NOTE */
         .meta-note {
             margin-top: 12px;
             padding-top: 10px;
@@ -185,7 +165,6 @@
         }
         .meta-note i { color: #00bfa6; font-size: 0.7rem; }
 
-        /* VIEW FEATURES BUTTON */
         .view-features-btn {
             background: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
@@ -205,7 +184,6 @@
             transform: translateY(-2px);
         }
 
-        /* LIVE DEMO BUTTON GRADIENT */
         .live-demo-btn {
             background: linear-gradient(135deg, #00bfa6, #18ffff);
             border: none;
@@ -224,7 +202,6 @@
         }
         .live-demo-btn:hover::before { left: 100%; }
 
-        /* FLOATING SHAPES */
         .hero-floating-shapes .shape {
             position: absolute;
             opacity: 0.2;
@@ -243,7 +220,6 @@
         .cursor { font-weight: bold; color: #00bfa6; animation: blink 0.7s infinite; }
         @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
 
-        /* ===== ABOUT SECTION ===== */
         #about { padding: 6rem 2rem; background: #0f172a; color: #fff; }
         .about-container { display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap; }
         .image-wrapper { border-radius: 20px; overflow: hidden; box-shadow: 0 0 30px rgba(0,191,166,0.3); transition: 0.4s; }
@@ -260,7 +236,6 @@
         .stat { text-align: center; }
         .stat h4 { font-size: 2rem; color: #00bfa6; }
 
-        /* ===== PROJECTS SECTION ===== */
         #projects { padding: 6rem 2rem; background: #020617; color: #fff; text-align: center; min-height: 100vh; }
         .section-title { font-size: 2.5rem; margin-bottom: 2rem; color: #00bfa6; }
         .project-filters { margin-bottom: 3rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
@@ -271,7 +246,6 @@
         .filter-btn.active, .filter-btn:hover { background: #00bfa6; color: #000; transform: translateY(-2px); }
         .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto; }
 
-        /* PROJECT CARD WITH SLIDER */
         .project-card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
@@ -283,7 +257,6 @@
         }
         .project-card:hover { transform: translateY(-15px) scale(1.02); box-shadow: 0 20px 40px rgba(0,191,166,0.3); border-color: #00bfa6; }
 
-        /* SLIDER CONTAINER */
         .slider-container {
             position: relative;
             width: 100%;
@@ -309,7 +282,6 @@
         }
         .slide.active { opacity: 1; }
 
-        /* SLIDER CONTROLS */
         .slider-btn {
             position: absolute;
             top: 50%;
@@ -332,7 +304,6 @@
         .slider-prev { left: 10px; }
         .slider-next { right: 10px; }
 
-        /* SLIDER DOTS */
         .slider-dots {
             position: absolute;
             bottom: 12px;
@@ -353,7 +324,6 @@
         .dot.active { background: #00bfa6; width: 20px; border-radius: 4px; }
         .dot:hover { background: #00bfa6; transform: scale(1.2); }
 
-        /* VIEW ALL BUTTON */
         .view-all-btn {
             position: absolute;
             bottom: 12px;
@@ -375,7 +345,6 @@
         }
         .view-all-btn:hover { background: #00bfa6; color: #000; transform: scale(1.05); border-color: #00bfa6; }
 
-        /* CONFIDENTIAL BADGE */
         .confidential-badge {
             display: inline-flex;
             align-items: center;
@@ -397,7 +366,6 @@
         .tech span { background: rgba(0,191,166,0.15); color: #00bfa6; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(0,191,166,0.3); }
         .buttons { margin-top: auto; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
 
-        /* LIGHTBOX STYLES */
         .lightbox {
             display: none;
             position: fixed;
@@ -423,7 +391,6 @@
         .lightbox-prev:hover, .lightbox-next:hover { background: #00bfa6; transform: translateY(-50%) scale(1.1); }
         .lightbox-counter { position: absolute; bottom: 20px; color: white; font-size: 14px; background: rgba(0,0,0,0.6); padding: 8px 20px; border-radius: 30px; font-weight: 500; }
 
-        /* ===== ULTRA-ADVANCED SKILLS SECTION ===== */
         #skills {
             padding: 6rem 2rem;
             background: linear-gradient(135deg, #0a0a2a, #0f172a, #0a0a2a);
@@ -432,7 +399,6 @@
             overflow: hidden;
         }
 
-        /* Animated Background */
         #skills::before {
             content: '';
             position: absolute;
@@ -460,7 +426,6 @@
             z-index: 2;
         }
 
-        /* 3D Flip Card Effect */
         .skill-card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
@@ -487,7 +452,6 @@
             z-index: 2;
         }
 
-        /* Icon Circle with Pulse Effect */
         .skill-icon {
             width: 80px;
             height: 80px;
@@ -517,7 +481,6 @@
             text-shadow: 0 0 20px #00bfa6;
         }
 
-        /* Pulsing Ring */
         .skill-icon::before {
             content: '';
             position: absolute;
@@ -548,7 +511,6 @@
             font-weight: 600;
         }
 
-        /* Skill Tags with Hover Effects */
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
@@ -575,22 +537,6 @@
             box-shadow: 0 5px 15px rgba(0,191,166,0.4);
         }
 
-        /* Experience Level Badge */
-        .exp-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: linear-gradient(135deg, #ffd700, #ffb347);
-            color: #000;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            font-weight: bold;
-            z-index: 10;
-            transform: rotate(5deg);
-        }
-
-        /* Skill Stats */
         .skill-stats {
             margin-top: 1rem;
             padding-top: 1rem;
@@ -620,7 +566,6 @@
             justify-content: space-between;
         }
 
-        /* ===== ADVANCED CONTACT SECTION ===== */
         #contact {
             padding: 6rem 2rem;
             background: linear-gradient(135deg, #020617, #0a0a2a, #020617);
@@ -653,7 +598,6 @@
             gap: 3rem;
         }
 
-        /* Contact Info Cards */
         .contact-info {
             display: flex;
             flex-direction: column;
@@ -746,7 +690,6 @@
             transform: translateY(-2px);
         }
 
-        /* Social Links */
         .social-links {
             display: flex;
             gap: 1rem;
@@ -781,7 +724,6 @@
             color: #000;
         }
 
-        /* Contact Form */
         .contact-form {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
@@ -836,7 +778,6 @@
             color: #00bfa6;
         }
 
-        /* Form Submit Button */
         .submit-btn {
             width: 100%;
             padding: 12px;
@@ -872,7 +813,6 @@
             box-shadow: 0 10px 25px rgba(0,191,166,0.3);
         }
 
-        /* Success Message */
         .success-message {
             text-align: center;
             padding: 2rem;
@@ -887,7 +827,6 @@
             margin-bottom: 1rem;
         }
 
-        /* ===== ADVANCED FOOTER ===== */
         #footer {
             background: linear-gradient(135deg, #020617, #000000);
             color: #fff;
@@ -986,7 +925,6 @@
             color: #000;
         }
 
-        /* Newsletter */
         .newsletter-form {
             display: flex;
             gap: 0.5rem;
@@ -1135,7 +1073,6 @@
     <div class="skills-container" id="skillsContainer"></div>
 </section>
 
-<!-- ADVANCED CONTACT SECTION -->
 <section id="contact">
     <div class="contact-wrapper">
         <h2 class="section-title">Get In Touch</h2>
@@ -1190,7 +1127,6 @@
     </div>
 </section>
 
-<!-- ADVANCED FOOTER -->
 <footer id="footer">
     <div class="footer-container">
         <div class="footer-brand">
@@ -1232,7 +1168,6 @@
     <button id="topBtn">↑</button>
 </footer>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
     <span class="lightbox-close">&times;</span>
     <button class="lightbox-prev">❮</button>
@@ -1242,7 +1177,6 @@
 </div>
 
 <script>
-// ===== ULTRA-ADVANCED SKILLS DATA =====
 const skillsData = [
     {
         category: "Frontend Development",
@@ -1294,11 +1228,9 @@ const skillsData = [
     }
 ];
 
-// Render Skills Section
 function renderSkills() {
     const container = document.getElementById('skillsContainer');
     if (!container) return;
-    
     container.innerHTML = skillsData.map((category, idx) => `
         <div class="skill-card" data-category="${category.category}">
             <div class="skill-card-inner">
@@ -1323,7 +1255,6 @@ function renderSkills() {
             </div>
         </div>
     `).join('');
-    
     setTimeout(animateSkillBars, 500);
 }
 
@@ -1337,7 +1268,6 @@ function animateSkillBars() {
     });
 }
 
-// ===== PROJECTS DATA =====
 const projectsData = [
     { name: "Blockchain Donation System", desc: "A decentralized donation platform using blockchain ensuring transparency, trust, and secure transactions.", tech: ["Blockchain", "Ganache", "MongoDB"], category: "featured advanced web", github: "#", live: "#", images: ["blockchain1.png", "blockchain2.png", "blockchain3.png", "blockchain4.png", "blockchain5.png"] },
     { name: "Shifting Management System", desc: "A comprehensive desktop application for managing goods shifting operations.", tech: ["C#", "WinForms", "SQL Server", "ADO.NET"], category: "featured app", github: "https://github.com/Hasaranga2005/Shifting-Management-System", live: "#", images: ["eshift1.png", "eshift2.png", "eshift3.png", "eshift4.png", "eshift5.png"] },
@@ -1357,11 +1287,9 @@ const projectsData = [
     }
 ];
 
-// Render projects
 function renderProjects() {
     const container = document.getElementById('projectsContainer');
     if (!container) return;
-    
     container.innerHTML = projectsData.map((project, idx) => {
         if (project.isPortfolio) {
             return `
@@ -1409,27 +1337,123 @@ function renderProjects() {
             </div>
         `;
     }).join('');
-    
     setTimeout(initAllSliders, 100);
     attachViewAllButtons();
 }
 
-// Slider functions (keeping from previous code)
 let sliders = [];
-function initAllSliders() { /* ... slider initialization ... */ }
-function attachViewAllButtons() { /* ... view all button ... */ }
 
-// Lightbox functions
+function initAllSliders() {
+    sliders = [];
+    document.querySelectorAll('.slider-container').forEach(container => {
+        const idx = container.id.split('-')[1];
+        const slides = container.querySelectorAll('.slide');
+        const prevBtn = container.querySelector('.slider-prev');
+        const nextBtn = container.querySelector('.slider-next');
+        const dotsContainer = container.querySelector('.slider-dots');
+        if (slides.length <= 1) return;
+        let currentIndex = 0;
+        let interval;
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                clearInterval(interval);
+                goToSlide(i);
+                startSlider();
+            });
+            dotsContainer.appendChild(dot);
+        });
+        function goToSlide(index) {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = index;
+            slides[currentIndex].classList.add('active');
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+        }
+        function nextSlide() { goToSlide((currentIndex + 1) % slides.length); }
+        function prevSlide() { goToSlide((currentIndex - 1 + slides.length) % slides.length); }
+        function startSlider() { interval = setInterval(nextSlide, 3000); }
+        function stopSlider() { clearInterval(interval); }
+        prevBtn.addEventListener('click', () => { stopSlider(); prevSlide(); startSlider(); });
+        nextBtn.addEventListener('click', () => { stopSlider(); nextSlide(); startSlider(); });
+        const card = container.closest('.project-card');
+        if (card) {
+            card.addEventListener('mouseenter', stopSlider);
+            card.addEventListener('mouseleave', startSlider);
+        }
+        startSlider();
+        sliders.push({ container, stopSlider, startSlider });
+    });
+}
+
+function attachViewAllButtons() {
+    document.querySelectorAll('.view-all-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const images = JSON.parse(btn.getAttribute('data-images'));
+            const projectName = btn.getAttribute('data-name');
+            openLightbox(images, 0, projectName);
+        });
+    });
+}
+
 const lightbox = document.getElementById('lightbox');
-// ... rest of lightbox functions ...
+const lightboxImg = document.querySelector('.lightbox-img');
+const lightboxCounter = document.querySelector('.lightbox-counter');
+let currentImages = [];
+let currentImageIndex = 0;
+let currentProjectName = '';
 
-// Contact Form Handler
+function openLightbox(images, index, projectName) {
+    currentImages = images;
+    currentImageIndex = index;
+    currentProjectName = projectName;
+    lightboxImg.src = `assets/images/${images[index]}`;
+    lightboxCounter.textContent = `${index + 1} / ${images.length} · ${projectName}`;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+    lightboxImg.src = `assets/images/${currentImages[currentImageIndex]}`;
+    lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length} · ${currentProjectName}`;
+}
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+    lightboxImg.src = `assets/images/${currentImages[currentImageIndex]}`;
+    lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length} · ${currentProjectName}`;
+}
+
+document.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
+document.querySelector('.lightbox-prev')?.addEventListener('click', prevImage);
+document.querySelector('.lightbox-next')?.addEventListener('click', nextImage);
+
+document.addEventListener('keydown', (e) => {
+    if (!lightbox?.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'ArrowRight') nextImage();
+});
+
+if (lightbox) {
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+}
+
 document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     btn.disabled = true;
-    
     setTimeout(() => {
         btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         btn.style.background = '#00bfa6';
@@ -1441,7 +1465,6 @@ document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     }, 1500);
 });
 
-// Newsletter Handler
 document.getElementById('newsletterForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
     const input = this.querySelector('input');
@@ -1449,13 +1472,11 @@ document.getElementById('newsletterForm')?.addEventListener('submit', function(e
     input.value = '';
 });
 
-// Copy Text Function
 function copyText(id) {
     navigator.clipboard.writeText(document.getElementById(id).innerText);
     alert('Copied to clipboard! ✨');
 }
 
-// Typed Text Effect
 const typedText = document.querySelector(".typed-text");
 const textArray = ["Developer.", "Designer.", "Writer.", "Creator."];
 let textArrayIndex = 0, charIndex = 0;
@@ -1480,11 +1501,9 @@ document.addEventListener("DOMContentLoaded", () => setTimeout(type, 1000));
 
 function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
 
-// Navbar scroll effect
 const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => navbar.classList.toggle("scrolled", window.scrollY > 50));
 
-// Active link highlight
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
 window.addEventListener("scroll", () => {
@@ -1499,12 +1518,10 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// Mobile menu
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navLinks");
 hamburger?.addEventListener("click", () => navMenu.classList.toggle("active"));
 
-// Counter animation
 const counters = document.querySelectorAll('.counter');
 let countersStarted = false;
 function startCounters() {
@@ -1528,7 +1545,6 @@ window.addEventListener("scroll", () => {
     if (scrollY > aboutSection.offsetTop - 300) startCounters();
 });
 
-// Filter projects
 const filterButtons = document.querySelectorAll(".filter-btn");
 function filterProjects(filter) {
     document.querySelectorAll(".project-card").forEach(card => {
@@ -1550,7 +1566,6 @@ const topBtn = document.getElementById("topBtn");
 window.addEventListener("scroll", () => topBtn.style.display = scrollY > 300 ? "block" : "none");
 topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-// Initialize
 document.addEventListener("DOMContentLoaded", () => {
     renderSkills();
     renderProjects();
