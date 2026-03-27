@@ -7,17 +7,17 @@
     <link rel="icon" type="image/png" sizes="any" href="assets/images/logo.png">
     <link rel="apple-touch-icon" href="assets/images/logo.png">
     <meta name="theme-color" content="#00bfa6">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function(){
-        emailjs.init("pM_sREFWvxiSyaCK6");
-    })();
-</script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("pM_sREFWvxiSyaCK6");
+        })();
+    </script>
     <style>
+        /* ===== YOUR EXISTING CSS (KEEP AS IS) ===== */
         * {margin:0; padding:0; box-sizing:border-box;}
         body {font-family: 'Roboto', sans-serif; scroll-behavior: smooth; line-height:1.6; background:#020617;}
         a {text-decoration:none; color:inherit;}
@@ -1455,6 +1455,7 @@ if (lightbox) {
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 }
 
+// WORKING CONTACT FORM WITH EMAILJS
 document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
